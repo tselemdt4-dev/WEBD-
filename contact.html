@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Build X | Contact Us</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="logo-area">
+      <a href="index.html">
+        <img src="images/buildx.png" alt="Build X Logo" class="site-logo">
+      </a>
+      <span class="tagline">Build It. Your Way.</span>
+    </div>
+    
+    <nav class="main-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">PCs</a></li>
+        <li><a href="components.html">Components</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main Content Area -->
+  <main>
+    <section class="contact-section">
+      <div class="contact-header">
+        <h1>Get in Touch</h1>
+        <p>Have a question about a custom build, component compatibility, or stock availability? Drop us a message below.</p>
+      </div>
+
+      <div class="contact-wrapper">
+        
+        <!-- Left Side: Interactive Contact Form -->
+        <form class="contact-form" action="#" method="POST">
+          
+          <div class="form-group">
+            <label for="fullName">Full Name</label>
+            <input type="text" id="fullName" name="fullName" placeholder="e.g. Alex Mercer" required>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="e.g. alex@example.com" required>
+          </div>
+
+          <div class="form-group">
+            <label for="inquiryType">Inquiry Category</label>
+            <select id="inquiryType" name="inquiryType" required>
+              <option value="" disabled selected>Select an option</option>
+              <option value="custom-build">Custom PC Request</option>
+              <option value="compatibility">Component Compatibility</option>
+              <option value="support">Technical Support</option>
+              <option value="general">General Inquiry</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Tell us what you're looking to build..." required></textarea>
+          </div>
+
+          <button type="submit" class="btn-primary form-submit">Send Message</button>
+        </form>
+
+        <!-- Right Side: Contact Info & Support Banner -->
+                <div class="contact-info-card">
+          <h3>Direct Contact Info</h3>
+          
+          <div class="info-item">
+            <span class="info-title">Sales & Support:</span>
+            <p>support@buildx.co.za</p>
+          </div>
+
+          <div class="info-item">
+            <span class="info-title">Phone:</span>
+            <p>+27 (0)11 555 0199</p>
+          </div>
+
+          <div class="info-item">
+            <span class="info-title">Store Hours:</span>
+            <p>Mon - Fri: 08:30 - 17:00</p>
+            <p>Sat: 09:00 - 13:00</p>
+          </div>
+
+          <!-- NEW: paste this block here -->
+          <div class="info-item">
+            <span class="info-title">Showroom:</span>
+            <p>Limeroc Business Park, Holland Road (R114), Knoppieslaagte, Centurion 0157</p>
+            <p><a href="https://www.google.com/maps/place/Evetech/@-25.9070533,28.0302525,17z/data=!3m1!4b1!4m6!3m5!1s0x1e956453e7af67eb:0x325b4bc90aec6164!8m2!3d-25.9070533!4d28.0302525!16s%2Fg%2F1tdd3hkb" target="_blank" rel="noopener noreferrer" style="color: var(--accent-blue);">Get Directions →</a></p>
+          </div>
+          <!-- END NEW -->
+
+          <div class="support-box">
+            <h4>Build Consultation</h4>
+            <p>Need help selecting parts for a specific budget? Our team can draft a custom part list tailored to your workload.</p>
+          </div>
+        
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <p>&copy; 2026 Build X. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

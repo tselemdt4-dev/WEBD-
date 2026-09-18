@@ -1,0 +1,796 @@
+/* ==========================================================================
+   BUILD X - MAIN STYLESHEET
+   Theme: Dark Tech / Cyber Blue
+   ========================================================================== */
+
+/* 1. Global CSS Variables & Theme Setup */
+:root {
+  --bg-dark: #0b0e14;         /* Obsidian Dark Background */
+  --bg-card: #161b22;         /* Dark Card Container Background */
+  --bg-header: #0d1117;       /* Header / Navigation Background */
+  --accent-blue: #007bff;     /* Build X Electric Blue */
+  --accent-hover: #0056b3;    /* Hover State Blue */
+  --text-main: #f8fafc;       /* Bright White Text */
+  --text-muted: #8e9aaf;      /* Steel Grey Muted Text */
+  --border-color: #21262d;    /* Subdued Border Lines */
+  --card-glow: rgba(0, 123, 255, 0.15); /* Soft Blue Neon Glow */
+  --radius: 8px;              /* Smooth Corner Radius */
+  --transition: all 0.3s ease;/* Smooth Animation State */
+}
+
+/* 2. Base Reset & Typography Defaults */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.site-logo {
+  max-height: 40px;
+  width: auto;
+  display: block;
+}
+
+body {
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 3. Site Header & Global Navigation Menu */
+.site-header {
+  background-color: var(--bg-header);
+  border-bottom: 1px solid var(--border-color);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo-area {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.site-logo {
+  height: 45px;
+  width: auto;
+  object-fit: contain;
+}
+
+.tagline {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.main-nav ul {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+}
+
+.main-nav a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  padding: 0.5rem 0.8rem;
+  border-radius: var(--radius);
+  transition: var(--transition);
+}
+
+/* Pseudo-Classes: Navigation States */
+.main-nav a:hover,
+.main-nav a:focus {
+  color: var(--text-main);
+  background-color: rgba(255, 255, 255, 0.05);
+  outline: none;
+}
+
+.main-nav a.active {
+  color: var(--accent-blue);
+  border-bottom: 2px solid var(--accent-blue);
+}
+
+/* 4. Main Page Layout & Sections */
+main {
+  flex: 1;
+  max-width: 1200px;
+  width: 90%;
+  margin: 2rem auto;
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  padding: 4rem 1rem;
+  background: linear-gradient(180deg, rgba(0, 123, 255, 0.08) 0%, rgba(11, 14, 20, 0) 100%);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  margin-bottom: 3rem;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+.hero p {
+  color: var(--text-muted);
+  max-width: 600px;
+  margin: 0 auto 1.5rem auto;
+}
+
+/* Button Component Styles & Hover Effects */
+.btn-primary, .btn-secondary {
+  display: inline-block;
+  padding: 0.75rem 1.75rem;
+  border-radius: var(--radius);
+  font-weight: 600;
+  text-decoration: none;
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.btn-primary {
+  background-color: var(--accent-blue);
+  color: #ffffff;
+  border: none;
+}
+
+.btn-primary:hover, .btn-primary:focus {
+  background-color: var(--accent-hover);
+  box-shadow: 0 0 15px var(--card-glow);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--text-main);
+  border: 1px solid var(--accent-blue);
+}
+
+.btn-secondary:hover, .btn-secondary:focus {
+  background-color: var(--accent-blue);
+  color: #ffffff;
+}
+
+/* 5. Product Grid (Flexbox / Grid Layout) */
+.products-section {
+  margin-bottom: 3rem;
+}
+
+.products-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Product Card Component & Glow Hover State */
+.product-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  text-align: center;
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--accent-blue);
+  box-shadow: 0 8px 20px var(--card-glow);
+}
+
+.product-card h3 {
+  font-size: 1.3rem;
+  color: var(--text-main);
+  margin-bottom: 0.5rem;
+}
+
+.product-card p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.product-card .price {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--accent-blue);
+  margin-bottom: 1.2rem;
+}
+
+/* About / Feature Summary Block */
+.about-summary {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  padding: 2.5rem;
+  border-radius: var(--radius);
+  text-align: center;
+}
+
+.about-summary h2 {
+  margin-bottom: 0.8rem;
+}
+
+.about-summary p {
+  color: var(--text-muted);
+}
+
+/* 6. Footer Section */
+.site-footer {
+  background-color: var(--bg-header);
+  border-top: 1px solid var(--border-color);
+  text-align: center;
+  padding: 1.5rem;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+/* ==========================================================================
+   7. RESPONSIVE DESIGN (MEDIA QUERIES)
+   ========================================================================== */
+
+/* Tablet Breakpoint (768px and below) */
+@media (max-width: 768px) {
+  .site-header {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .main-nav ul {
+    gap: 1rem;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+}
+
+/* Mobile Breakpoint (480px and below) */
+@media (max-width: 480px) {
+  .main-nav ul {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5rem;
+  }
+
+  .tagline {
+    display: none; /* Hide tagline on tiny screens for clean header */
+  }
+
+  .hero {
+    padding: 2rem 1rem;
+  }
+
+  .hero h1 {
+    font-size: 1.6rem;
+  }
+}
+.card-image {
+  width: 100%;
+  height: 160px;
+  margin-bottom: 1rem;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+/* ==========================================================================
+   CATEGORY IMAGE TILES (OVERLAY STYLE)
+   ========================================================================== */
+
+.category-section {
+  margin: 3rem 0;
+}
+
+.category-section h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* 2x3 Grid on Desktop */
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+/* Card Container with Relative Positioning */
+.category-card {
+  position: relative;
+  height: 220px;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  display: block;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.category-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+/* Dark Tint Overlay with Centered Bold Text */
+.category-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55); /* Darkens image so text stays clear */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+}
+
+.category-overlay h3 {
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-align: center;
+  padding: 0 1rem;
+}
+
+/* Hover States: Image Zoom + Blue Border Glow */
+.category-card:hover {
+  border-color: var(--accent-blue);
+  box-shadow: 0 0 20px var(--card-glow);
+}
+
+.category-card:hover img {
+  transform: scale(1.08); /* Smooth zoom effect on hover */
+}
+
+.category-card:hover .category-overlay {
+  background: rgba(0, 123, 255, 0.35); /* Swaps dark overlay to electric blue tint */
+}
+
+/* Responsive Grid for Mobile */
+@media (max-width: 768px) {
+  .category-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .category-grid {
+    grid-template-columns: 1fr;
+  }
+}
+/* Top Category Card Container */
+.category-card {
+  position: relative;
+  height: 220px;       /* Forces a fixed card height */
+  overflow: hidden;    /* Clips image corners to match rounded border */
+}
+
+/* Top Image styling */
+.category-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;   /* Magic property: Zooms and crops photo to fill 100% */
+}
+/* 1. Remove inner padding from the outer card container */
+.product-card {
+  padding: 0;          /* Removes space around the image */
+  overflow: hidden;    /* Keeps top corners smoothly rounded */
+}
+
+/* 2. Force the image to fill and zoom inside its header box */
+.card-image {
+  width: 100%;
+  height: 200px;       /* Sets fixed height for the image header */
+  overflow: hidden;
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;   /* Zooms and crops to eliminate empty sidebars */
+}
+/* ==========================================================================
+   FEATURED RIGS CARD IMAGES (FULL VIEW - NO CROPPING)
+   ========================================================================= */
+
+/* Update the image container box */
+.card-image {
+  width: 100%;
+  height: 200px; /* Kept fixed height for grid consistency */
+  overflow: hidden;
+  
+  /* Centering logic for full containment */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  /* Creates a dark backdrop so edges blend in with the dark theme */
+  background: #000000;
+  
+  /* Optional: Adds a very subtle blur glow effect */
+  position: relative; 
+}
+
+/* Optional: Adds blur effect behind the object, if desired.
+   If this makes it too messy, delete this whole block below. */
+.card-image::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: inherit; /* Uses same background image */
+  filter: blur(8px);
+  opacity: 0.2; /* keeps it very faint */
+}
+
+/* Update the image itself */
+.card-image img {
+  width: 100%;
+  height: 100%;
+
+  
+  /* Prevents blur from bleeding into the product itself */
+  position: relative;
+  z-index: 1;
+  
+  /* Optional: Softens edges a bit for smoother blend */
+  mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 90%, rgba(0,0,0,0) 100%);
+  
+  /* Keeps zoom hover effect from before */
+  transition: transform 0.4s ease;
+}
+
+/* Updated hover effect to zoom the full PC case smoothly */
+.product-card:hover .card-image img {
+  transform: scale(1.06); 
+}
+/* ==========================================================================
+   LOCATION & MAP SECTION
+   ========================================================================== */
+
+.location-section {
+  margin: 3rem 0;
+}
+
+.location-section h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.location-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  padding: 2rem;
+}
+
+.location-info h3 {
+  color: var(--accent-blue);
+  margin-bottom: 1rem;
+}
+
+.location-info p {
+  margin-bottom: 0.75rem;
+  color: #cccccc;
+}
+
+.location-info .btn-secondary {
+  display: inline-block;
+  margin-top: 1rem;
+}
+
+.location-map iframe {
+  width: 100%;
+  height: 100%;
+  min-height: 250px;
+}
+
+@media (max-width: 768px) {
+  .location-container {
+    grid-template-columns: 1fr;
+  }
+}
+/* 2-Column Store Layout */
+.store-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Equal split for left details & right map */
+  gap: 2rem;
+  align-items: center;
+  text-align: left; /* Aligns text cleanly to the left */
+}
+
+.store-info h3 {
+  color: var(--accent-blue);
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.store-info p {
+  margin-bottom: 0.8rem;
+  font-size: 0.95rem;
+}
+
+.map-btn {
+  margin-top: 1rem;
+  display: inline-block;
+}
+
+/* Styled Right Map Container */
+.location-map {
+  width: 100%;
+  height: 300px;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 0 15px var(--card-glow);
+}
+
+/* Mobile Breakpoint: Stack vertically on small screens */
+@media (max-width: 768px) {
+  .store-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .location-map {
+    height: 250px;
+  }
+}
+/* ==========================================================================
+   CONTACT PAGE & FORM STYLES
+   ========================================================================== */
+
+.contact-section {
+  margin-bottom: 3rem;
+}
+
+.contact-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.contact-header h1 {
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.contact-header p {
+  color: var(--text-muted);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* 2-Column Grid Layout */
+.contact-wrapper {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+/* Contact Form Container */
+.contact-form {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  text-align: left;
+}
+
+.form-group label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+/* Inputs, Selects, & Textareas */
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background-color: var(--bg-dark);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  color: var(--text-main);
+  font-family: inherit;
+  font-size: 0.95rem;
+  transition: var(--transition);
+}
+
+/* Focus Pseudo-Class State (Required for UX & Rubric points) */
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--accent-blue);
+  box-shadow: 0 0 10px var(--card-glow);
+}
+
+.form-submit {
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
+/* Contact Info Card (Right Side) */
+.contact-info-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  padding: 2rem;
+  text-align: left;
+}
+
+.contact-info-card h3 {
+  color: var(--accent-blue);
+  margin-bottom: 1.5rem;
+  font-size: 1.4rem;
+}
+
+.info-item {
+  margin-bottom: 1.2rem;
+}
+
+.info-title {
+  display: block;
+  font-weight: 600;
+  color: var(--text-main);
+  font-size: 0.9rem;
+}
+
+.info-item p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.support-box {
+  margin-top: 2rem;
+  padding: 1rem;
+  background-color: rgba(0, 123, 255, 0.08);
+  border: 1px solid var(--card-glow);
+  border-radius: var(--radius);
+}
+
+.support-box h4 {
+  color: var(--accent-blue);
+  margin-bottom: 0.4rem;
+}
+
+.support-box p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+/* Responsive Breakpoint for Mobile/Tablet */
+@media (max-width: 768px) {
+  .contact-wrapper {
+    grid-template-columns: 1fr;
+  }
+}
+/* ==========================================================================
+   RESPONSIVE — TYPOGRAPHY ADJUSTMENTS (add inside existing 768px query)
+   ========================================================================== */
+@media (max-width: 768px) {
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  .product-card h3 {
+    font-size: 1.15rem;
+  }
+
+  .product-card .price {
+    font-size: 1.3rem;
+  }
+
+  .category-overlay h3 {
+    font-size: 1.2rem;
+  }
+
+  .about-summary p,
+  .hero p {
+    font-size: 0.95rem;
+  }
+}
+
+/* ==========================================================================
+   RESPONSIVE — IMAGE ADJUSTMENTS (add inside existing 768px query)
+   ========================================================================== */
+@media (max-width: 768px) {
+  .category-card {
+    height: 160px; /* shorter tiles so 2-column grid doesn't feel cramped */
+  }
+
+  .card-image {
+    height: 160px;
+  }
+
+  .location-map {
+    height: 220px;
+  }
+}
+/* ==========================================================================
+   RESPONSIVE — MOBILE REFINEMENTS (add inside existing 480px query)
+   ========================================================================== */
+@media (max-width: 480px) {
+  h2 {
+    font-size: 1.3rem;
+  }
+
+  .product-card h3 {
+    font-size: 1.05rem;
+  }
+
+  .product-card .price {
+    font-size: 1.2rem;
+  }
+
+  .category-overlay h3 {
+    font-size: 1rem;
+    letter-spacing: 1px; /* tighter than desktop's 2px, less cramped on small screens */
+  }
+
+  .category-card {
+    height: 140px;
+  }
+
+  .card-image {
+    height: 140px;
+  }
+
+  .btn-primary, .btn-secondary {
+    width: 100%; /* full-width tappable buttons feel better on touch screens */
+    text-align: center;
+    padding: 0.85rem 1rem; /* slightly taller for easier tapping */
+  }
+
+  main {
+    width: 92%; /* a bit more breathing room on tiny screens */
+  }
+
+  .location-map {
+    height: 200px;
+  }
+}
