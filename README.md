@@ -1,6 +1,6 @@
 # Build X — Custom PC & Hardware Store
 
-**Student Name:** Mbulelo
+**Student Name:** Mbulelo Tsele
 **Student Number:** ST10526706
 **Module:** Web Development (Introduction) [WEDE5020]
 **Live Website:** [https://fastidious-marzipan-0107a1.netlify.app/](https://fastidious-marzipan-0107a1.netlify.app/)
@@ -24,7 +24,7 @@ Build X is a responsive, multi-page website designed for a fictional custom PC a
 
 ## 4. Key Features & Functionality
 *   **HTML5 & Semantic Structure:** Consistent navigation and layout across all pages using appropriate semantic tags.
-*   **CSS3 & Responsive Design:** A dark-tech themed UI built using CSS variables, Flexbox, and CSS Grid. Media queries ensure the layout adapts seamlessly to mobile devices without horizontal scrolling.
+*   **CSS3 & Responsive Design:** A dark-tech themed UI built using CSS variables, Flexbox, and CSS Grid. Pages use explicit relative paths for the stylesheet, images, and scripts to keep static assets resolving correctly on Netlify. Media queries ensure the layout adapts seamlessly to mobile devices without horizontal scrolling.
 *   **JavaScript Interactivity:**
     *   Dynamic product search and category filtering on the components page.
     *   Custom interactive lightbox for viewing product images.
