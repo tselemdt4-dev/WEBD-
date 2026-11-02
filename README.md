@@ -1,141 +1,153 @@
-Build X — Custom PC Building & Hardware Website
+# Build X — Custom PC & Hardware Store
 
-Course Project: Web Development (Part 2) Creator: Mbulelo (ST10526706) Repository: https://github.com/tselemdt4-dev/WEBD-.git
+Build X is a responsive, multi-page storefront for a fictional custom PC and hardware retailer. The project showcases pre-built gaming computers and individual PC components, with product discovery, a contact form, and store location information.
 
-1. What is this?
+## 1. Project Overview & Objectives
 
-Build X is a multi-page website I made for a fictional custom PC and hardware store. It's meant for people who want to buy pre-built gaming PCs or look at individual parts like CPUs, GPUs, RAM and storage. There's also a page showing the store location and a contact form for people to send in questions.
+The project demonstrates how to build a small static e-commerce-style website using semantic HTML, modern CSS layout techniques, and vanilla JavaScript.
 
-Main Features
-4 pages: index.html, products.html, components.html, contact.html
-Dark theme design with blue accent colors, glowing hover effects on cards and buttons, and rounded corners
-A working contact form with focus states (the input boxes light up blue when you click into them)
-An embedded Google Map on the location section showing the store address
-Everything is responsive, so it reshapes itself on tablet and phone screens instead of breaking
-2. Design Choices
-Font
+### Objectives
 
-I used Inter (with system-ui and sans-serif as backups in case Inter doesn't load).
+- Present PC products and components in a clear, browsable catalog.
+- Provide consistent navigation and visual styling across pages.
+- Support desktop, tablet, and mobile screen sizes.
+- Add client-side category filtering to the component catalog.
+- Validate contact form inputs and provide clear feedback.
+- Practice HTML5, CSS Grid, Flexbox, responsive design, and JavaScript DOM interactions.
 
-Colors
+> The site is a front-end demonstration. It does not process payments, store orders, or send contact form submissions to a server.
 
-All the colors are stored as CSS variables at the top of the stylesheet so I could change the whole theme from one place instead of editing every element one by one:
+## 2. Target Audience & Brand Identity
 
-Variable	Hex	What it's for
---bg-dark	
-#0b0e14	Main page background
---bg-card	
-#161b22	Background for cards and the form box
---bg-header	
-#0d1117	Header/nav bar background
---accent-blue	
-#007bff	Buttons, links, highlights
---accent-hover	
-#0056b3	Darker blue for hover states
---text-main	
-#f8fafc	Main text color (almost white)
---text-muted	
-#8e9aaf	Grey text for subtitles/descriptions
---border-color	
-#21262d	Borders on cards and inputs
---card-glow	rgba(0, 123, 255, 0.15)	The soft blue glow on hover
---radius	8px	Corner rounding used everywhere
-Layout
+### Target audience
 
-I mainly used CSS Grid for things like the product cards, the category tiles, and the 2-column layout on the contact and location sections. I used Flexbox for smaller stuff like the navbar, the form fields stacking, and footer content.
+Build X is designed for PC gamers, people planning a custom build, and customers comparing computer components. The interface aims to make product categories and enquiry options easy to find for both experienced builders and first-time buyers.
 
-Responsive Breakpoints
-Above 768px: everything shows in multiple columns (grids stay side by side)
-768px and below: grids collapse down to fewer columns or stack into a single column, font sizes shrink slightly, and image containers get shorter so nothing feels cramped
-480px and below: extra tweaks like hiding the tagline text in the header, full-width buttons for easier tapping, and smaller heading sizes
-3. How to Open the Site
+### Brand identity: Dark Tech / Cyber Blue
 
-You don't need to install anything or run any commands to view this.
+The visual language pairs dark, near-black surfaces with electric-blue accents to suggest a modern gaming and hardware brand. Bright text, muted supporting copy, subtle borders, rounded cards, and restrained blue glows help maintain contrast and hierarchy.
 
-Clone the repo or download it as a ZIP and extract it:
-git clone https://github.com/tselemdt4-dev/WEBD-.git
-Open the folder and double-click index.html to open it in your browser. That's it.
+The shared palette and design values are defined as CSS custom properties in `styles.css`, making the theme easier to maintain consistently.
 
-(If you're using VS Code, you can also right-click index.html and use the "Open with Live Server" extension if you have it installed — not required though, opening the file directly works fine too.)
+## 3. Architecture & Tech Stack
 
-4. File Structure
+Build X is implemented with static front-end files and does not require a framework, package manager, or build step.
+
+| Technology | Use |
+| --- | --- |
+| HTML5 | Semantic page structure, navigation, product content, and forms |
+| CSS3 | Theme tokens, typography, component styling, and responsive layouts |
+| CSS Grid | Product and category grids, plus multi-column page sections |
+| Flexbox | Navigation, grouped controls, and vertically arranged card/form content |
+| Vanilla JavaScript (ES6) | Component category filters and contact form validation |
+
+### Responsive design
+
+The stylesheet keeps shared component styles together and groups responsive overrides into one `768px` and one `480px` media query. On smaller screens the header and navigation adapt, grids reflow, and images stay constrained to their cards.
+
+### Project structure
+
+```text
 WEBD-/
-│
-├── index.html          # Main homepage (Hero, Featured Rigs, Categories, Location & Map)
-├── products.html       # Pre-built gaming rigs and workstations page
-├── components.html     # Hardware components catalog (GPUs, CPUs, RAM, Storage, Peripherals)
-├── contact.html        # Contact details, interactive form, and map integration
-├── styles.css          # Central stylesheet (CSS variables, Grid/Flexbox layouts, Media queries)
-├── CHANGELOG.md         # Dated record of changes made during development
-│
-└── images/             # Image asset directory
-    ├── buildx.png
-    ├── gpufinal.jpg
-    ├── cpu.jpg
-    ├── ram.jpg
-    ├── ssd.jpg
-    ├── pcbuildfinal.jpg
-    ├── peripherals.jpg
-    ├── pccase1.jpg
-    ├── download.jpe
-    └── overkill.jpe
-5. Pages
-index.html — homepage with category tiles, featured PCs, and store location
-products.html — full list of pre-built PCs
-components.html — individual hardware parts by category
-contact.html — contact form and store info
-6. Changelog
+├── index.html
+├── products.html
+├── components.html
+├── contact.html
+├── enquiries.html
+├── styles.css
+├── js_assets/
+│   ├── contact-validation.js
+│   ├── enquiry-validation.js
+│   ├── product-lightbox.js
+│   └── product-filter.js
+├── images/
+│   ├── gaming-pc-1440p.jpg
+│   └── high-end-4k-workstation.jpg
+├── CHANGELOG.md
+└── README.md
+```
 
-See CHANGELOG.md for the full, dated record of changes made during development.
+## 4. Key Features & Page Layouts
 
-7. Known Limitations
-The contact form doesn't actually send anywhere yet — it's frontend only, so clicking "Send Message" won't email anyone. I'd need to hook it up to a backend or a service like Formspree to make it actually work.
-Tested mainly in Chrome, should work fine in other modern browsers too since I didn't use anything too fancy.
-8. What I'd Add With More Time
-Real product filtering (by price, brand, category)
-A working backend for the contact form
-A shopping cart / checkout flow
-User accounts and order history
-9. Credits
-Font: Google Fonts — Inter
-Map Integration: Google Maps Embed API
-Icons & Hardware Imagery: Product showcase assets used for academic project purposes
-10. References
+### Home — `index.html`
 
-Google Fonts, 2026. Inter. [online] Available at: https://fonts.google.com/specimen/Inter [Accessed 18 September 2026].
+- Welcome hero with a link to the pre-built PC catalog.
+- Category tiles linking to component categories.
+- Featured product cards.
+- Click-to-open lightbox for product and category images, with keyboard, close-button, and backdrop support.
+- Store location information and map section.
+- Search metadata targeting South African shoppers looking for gaming PCs and custom computers.
+- Descriptive alternative text for product and component imagery.
 
-Google, 2026. Maps Embed API. [online] Available at: https://developers.google.com/maps/documentation/embed/get-started [Accessed 18 Septe
+### PC Catalog — `products.html`
 
-## 11. Project Planning Overview
+- Pre-built PC cards with images, descriptions, prices, and enquiry links.
+- Enquiry links pass the selected PC name to the custom enquiry page as a `product` URL parameter.
+- Live search that filters PC cards by product title and reports when there are no matches.
+- Product image lightbox for viewing larger images.
+- Responsive product grid that adapts to available page width.
 
-### Goals and Objectives
-The goal was to build a responsive, multi-page hardware/PC store website with a clear dark tech visual identity, working navigation between all pages, a contact form, and an embedded map showing the store location — while practicing CSS Grid, Flexbox, media queries, and semantic HTML5 structure.
+### Components Catalog — `components.html`
 
-### Sitemap
-Home (index.html)
-├── PCs (products.html)
-├── Components (components.html)
-│ ├── #gpu
-│ ├── #cpu
-│ ├── #ram
-│ ├── #storage
-│ └── #peripherals
-└── Contact (contact.html)
+- Product sections for GPUs, CPUs, RAM, storage, and peripherals.
+- Descriptive product image alt text identifies each component and its intended use.
+- Search metadata targets South African shoppers looking for individual PC components.
+- Category filter buttons, including an **All** option.
+- Vanilla JavaScript shows the selected category and updates the active filter button.
+- Product image lightbox for viewing larger images.
+- Component enquiry links pass the selected product name to the custom enquiry page as a `product` URL parameter.
 
-### Design Aesthetic
-Dark, "tech" themed interface — near-black backgrounds, electric blue accents, glowing hover states on cards and buttons, and rounded corners throughout. Inter was chosen as the typeface for a clean, modern feel that suits a hardware/gaming audience.
+### Contact — `contact.html`
 
-### Wireframes / Layout Planning
-No separate wireframe diagrams were drawn up front — layout decisions (hero banner, category grid, product grid, 2-column contact/location sections) were planned and adjusted directly in HTML/CSS during development, then refined based on how they rendered at different breakpoints.
+- Contact form for a customer's name, email, inquiry category, and message.
+- Client-side required-field and email validation with inline red error messages styled using `.error-msg`.
+- A simulated success notification after valid submission.
+- Contact details and store information.
 
-### Technical Requirements
-- HTML5, CSS3 (Grid, Flexbox, custom properties, media queries)
-- No JavaScript framework or build tools — plain static files
-- Google Maps Embed API for the location section
-- Google Fonts (Inter)
+The main navigation on the Home, PCs, Components, and Contact pages links to the custom PC Enquiry page.
 
-### Timeline
-Built and refined over several sessions across September 2026 — starting with the homepage and core styling, then the contact page and form, then filling in the previously-missing PCs and Components pages, followed by responsive refinements and documentation.
+### Custom PC Enquiry — `enquiries.html`
 
-### Budget
-As an academic project with no real business behind it, there's no actual monetary budget — hosting would be free-tier (e.g. Netlify or GitHub Pages), and all assets used were either self-sourced images or free stock photography.
+- Custom PC quote form with required name, email, primary use case, and budget fields.
+- Optional message field for additional build requirements.
+- On page load, product enquiry links prefill the message with the selected product and a request for more information, using the decoded `product` URL parameter.
+- The success response includes the product name when the enquiry came from a product link.
+- Client-side validation checks name length, email format, use case, and budget.
+- Inline validation errors appear below invalid fields; valid submissions display a budget-based estimated build time in a green success panel. This is a front-end simulation and does not send an enquiry.
+
+### Store location
+
+The home page includes the store location section and an embedded map. The map requires an internet connection to load.
+
+## 5. Setup & Local Execution
+
+### Requirements
+
+- A modern web browser.
+- An internet connection for externally hosted resources such as the embedded map or web fonts.
+- No local server or dependency installation is required for basic viewing.
+
+### Run locally
+
+1. Clone the repository or download and extract its ZIP archive:
+
+   ```bash
+   git clone https://github.com/tselemdt4-dev/WEBD-.git
+   ```
+
+2. Open the project folder.
+3. Open `index.html` in a modern browser.
+
+Alternatively, open the repository in Visual Studio Code and use the Live Server extension if installed. This is optional.
+
+## Limitations
+
+- The contact form performs front-end validation only. A backend or form service is needed to deliver submissions.
+- Product category filtering is available on the Components page; price and brand filtering are not implemented.
+- The site does not include cart, checkout, payment processing, user accounts, or order history.
+
+## Credits
+
+- Typeface: Inter, with system font fallbacks.
+- Store map: Google Maps embed.
+- Product imagery: project showcase assets.

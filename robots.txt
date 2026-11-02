@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://your-netlify-url-here.netlify.app/sitemap.xml
+

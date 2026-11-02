@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Build X | Custom PC Quote South Africa</title>
+  <meta name="description" content="Request a custom PC quote from Build X in South Africa. Tell us how you plan to use your computer, your budget, and the build you have in mind.">
+  <meta name="keywords" content="custom PC quote South Africa, custom computer quote, gaming PC quote South Africa, custom gaming PC build, PC builder South Africa, workstation computer quote">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="logo-area">
+      <a href="index.html">
+        <img src="images/buildx.png" alt="Build X Logo" class="site-logo">
+      </a>
+      <span class="tagline">Build It. Your Way.</span>
+    </div>
+
+    <nav class="main-nav" aria-label="Main navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">PCs</a></li>
+        <li><a href="components.html">Components</a></li>
+        <li><a href="enquiries.html" class="active" aria-current="page">Enquiry</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="contact-section enquiry-section">
+      <div class="contact-header">
+        <h1>Request a Custom PC Quote</h1>
+        <p>Tell us what you need and your estimated budget. The Build X team can help plan a PC for your work, gaming, or creative projects.</p>
+      </div>
+
+      <form id="enquiry-form" class="contact-form" action="#" method="post">
+        <div class="form-group">
+          <label for="fullName">Full Name</label>
+          <input type="text" id="fullName" name="fullName" autocomplete="name" required>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" autocomplete="email" required>
+        </div>
+
+        <div class="form-group">
+          <label for="useCase">Primary Use Case</label>
+          <select id="useCase" name="useCase" required>
+            <option value="" disabled selected>Select your primary use</option>
+            <option value="Gaming">Gaming</option>
+            <option value="Office/Work">Office/Work</option>
+            <option value="Video Editing/3D Rendering">Video Editing/3D Rendering</option>
+            <option value="Streaming">Streaming</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="budget">Estimated Budget</label>
+          <select id="budget" name="budget" required>
+            <option value="" disabled selected>Select your estimated budget</option>
+            <option value="Under R15,000">Under R15,000</option>
+            <option value="R15,000 - R25,000">R15,000 - R25,000</option>
+            <option value="R25,000 - R40,000">R25,000 - R40,000</option>
+            <option value="Over R40,000">Over R40,000</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Message <span class="text-muted">(optional)</span></label>
+          <textarea id="message" name="message" rows="5" placeholder="Share any preferred components, games, or other requirements."></textarea>
+        </div>
+
+        <button type="submit" class="btn-primary">Get Quote</button>
+      </form>
+
+      <div id="quote-result" class="form-status" style="display:none;" role="status" aria-live="polite" tabindex="-1"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 Build X. All rights reserved.</p>
+  </footer>
+
+  <script src="js_assets/enquiry-validation.js" defer></script>
+</body>
+</html>

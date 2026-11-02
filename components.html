@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Build X | Components</title>
+  <meta name="description" content="Shop individual PC components in South Africa at Build X. Browse graphics cards, CPUs, RAM, SSD storage, keyboards, monitors, and other PC peripherals for your next build or upgrade.">
+  <meta name="keywords" content="PC components South Africa, buy GPU South Africa, graphics cards, CPUs, processors, RAM, memory kits, SSD storage, NVMe SSD, PC peripherals, gaming keyboard, gaming monitor, custom PC upgrades, Build X">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -22,6 +24,7 @@
         <li><a href="index.html">Home</a></li>
         <li><a href="products.html">PCs</a></li>
         <li><a href="components.html" class="active">Components</a></li>
+        <li><a href="enquiries.html">Enquiry</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
@@ -34,115 +37,124 @@
       <p>Browse individual parts by category. Every component we stock is sourced from certified suppliers and covered by manufacturer warranty.</p>
     </section>
 
+    <div class="product-filters" role="group" aria-label="Filter components by category">
+      <button class="filter-button is-active" type="button" data-filter="all" aria-pressed="true">All</button>
+      <button class="filter-button" type="button" data-filter="gpu" aria-pressed="false">GPUs</button>
+      <button class="filter-button" type="button" data-filter="cpu" aria-pressed="false">CPUs</button>
+      <button class="filter-button" type="button" data-filter="ram" aria-pressed="false">RAM</button>
+      <button class="filter-button" type="button" data-filter="storage" aria-pressed="false">Storage</button>
+      <button class="filter-button" type="button" data-filter="peripherals" aria-pressed="false">Peripherals</button>
+    </div>
+
     <!-- GPU Section -->
-    <section class="products-section" id="gpu">
+    <section class="products-section" id="gpu" data-category="gpu">
       <h2>Graphics Cards</h2>
       <div class="product-grid">
         <article class="product-card">
           <div class="card-image">
-            <img src="images/gpufinal.jpg" alt="Graphics Card">
+            <img src="images/gpufinal.jpg" alt="Mid-range GPU for 1080p and 1440p gaming at high settings">
           </div>
           <div class="card-body">
             <h3>Mid-Range GPU</h3>
             <p>Solid 1080p to 1440p performance for the latest titles at high settings.</p>
             <p class="price">From R7,999</p>
-            <a href="contact.html" class="btn-secondary">Enquire</a>
+            <a href="enquiries.html?product=Mid-Range%20GPU" class="btn-secondary">Enquire</a>
           </div>
         </article>
 
         <article class="product-card">
           <div class="card-image">
-            <img src="images/graphicscard.jpg" alt="High-End Graphics Card">
+            <img src="images/graphicscard.jpg" alt="High-end GPU for 4K gaming, rendering, and creative workloads">
           </div>
           <div class="card-body">
             <h3>High-End GPU</h3>
             <p>4K-ready graphics power for gaming, rendering, and creative workloads.</p>
             <p class="price">From R18,499</p>
-            <a href="contact.html" class="btn-secondary">Enquire</a>
+            <a href="enquiries.html?product=High-End%20GPU" class="btn-secondary">Enquire</a>
           </div>
         </article>
       </div>
     </section>
 
     <!-- CPU Section -->
-    <section class="products-section" id="cpu">
+    <section class="products-section" id="cpu" data-category="cpu">
       <h2>Processors</h2>
       <div class="product-grid">
         <article class="product-card">
           <div class="card-image">
-            <img src="images/cpu.jpg" alt="Processor">
+            <img src="images/cpu.jpg" alt="Multi-core desktop CPU for gaming, multitasking, and everyday productivity">
           </div>
           <div class="card-body">
             <h3>Multi-Core Desktop CPU</h3>
             <p>Reliable everyday performance for gaming, multitasking, and productivity.</p>
             <p class="price">From R4,299</p>
-            <a href="contact.html" class="btn-secondary">Enquire</a>
+            <a href="enquiries.html?product=Multi-Core%20Desktop%20CPU" class="btn-secondary">Enquire</a>
           </div>
         </article>
       </div>
     </section>
 
     <!-- RAM Section -->
-    <section class="products-section" id="ram">
+    <section class="products-section" id="ram" data-category="ram">
       <h2>Memory (RAM)</h2>
       <div class="product-grid">
         <article class="product-card">
           <div class="card-image">
-            <img src="images/ram.jpg" alt="Memory Module">
+            <img src="images/ram.jpg" alt="High-speed RAM kit for responsive performance under heavy workloads">
           </div>
           <div class="card-body">
             <h3>High-Speed RAM Kit</h3>
             <p>Fast, reliable memory to keep your system responsive under heavy load.</p>
             <p class="price">From R1,199</p>
-            <a href="contact.html" class="btn-secondary">Enquire</a>
+            <a href="enquiries.html?product=High-Speed%20RAM%20Kit" class="btn-secondary">Enquire</a>
           </div>
         </article>
       </div>
     </section>
 
     <!-- Storage Section -->
-    <section class="products-section" id="storage">
+    <section class="products-section" id="storage" data-category="storage">
       <h2>Storage</h2>
       <div class="product-grid">
         <article class="product-card">
           <div class="card-image">
-            <img src="images/ssd.jpg" alt="SSD Storage">
+            <img src="images/ssd.jpg" alt="NVMe SSD for fast computer boot times and shorter game loading screens">
           </div>
           <div class="card-body">
             <h3>NVMe SSD</h3>
             <p>Fast boot times and quick load screens with reliable solid-state storage.</p>
             <p class="price">From R899</p>
-            <a href="contact.html" class="btn-secondary">Enquire</a>
+            <a href="enquiries.html?product=NVMe%20SSD" class="btn-secondary">Enquire</a>
           </div>
         </article>
       </div>
     </section>
 
     <!-- Peripherals Section -->
-    <section class="products-section" id="peripherals">
+    <section class="products-section" id="peripherals" data-category="peripherals">
       <h2>Peripherals</h2>
       <div class="product-grid">
         <article class="product-card">
           <div class="card-image">
-            <img src="images/keyboard1.jpg" alt="Gaming Keyboard">
+            <img src="images/keyboard1.jpg" alt="Mechanical keyboard with responsive switches for gaming and long typing sessions">
           </div>
           <div class="card-body">
             <h3>Mechanical Keyboard</h3>
             <p>Responsive mechanical switches built for gaming and long typing sessions.</p>
             <p class="price">From R1,499</p>
-            <a href="contact.html" class="btn-secondary">Enquire</a>
+            <a href="enquiries.html?product=Mechanical%20Keyboard" class="btn-secondary">Enquire</a>
           </div>
         </article>
 
         <article class="product-card">
           <div class="card-image">
-            <img src="images/monitor1.jpg" alt="Gaming Monitor">
+            <img src="images/monitor1.jpg" alt="High-refresh-rate gaming monitor for smooth competitive and casual play">
           </div>
           <div class="card-body">
             <h3>Gaming Monitor</h3>
             <p>Smooth, high-refresh-rate display for competitive and casual play alike.</p>
             <p class="price">From R4,999</p>
-            <a href="contact.html" class="btn-secondary">Enquire</a>
+            <a href="enquiries.html?product=Gaming%20Monitor" class="btn-secondary">Enquire</a>
           </div>
         </article>
       </div>
@@ -160,5 +172,7 @@
     <p>&copy; 2026 Build X. All rights reserved.</p>
   </footer>
 
+  <script src="js_assets/product-lightbox.js" defer></script>
+  <script src="js_assets/product-filter.js" defer></script>
 </body>
 </html>

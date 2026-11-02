@@ -22,6 +22,7 @@
         <li><a href="index.html">Home</a></li>
         <li><a href="products.html" class="active">PCs</a></li>
         <li><a href="components.html">Components</a></li>
+        <li><a href="enquiries.html">Enquiry</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
@@ -37,6 +38,11 @@
     <section class="products-section">
       <h2>All Rigs</h2>
 
+      <label class="product-search">
+        <span class="visually-hidden">Search pre-built PCs</span>
+        <input type="search" id="pc-search" placeholder="Search PCs..." autocomplete="off">
+      </label>
+
       <div class="product-grid">
 
         <!-- Starter PC -->
@@ -48,7 +54,7 @@
             <h3>Starter PC</h3>
             <p>Entry-level build for schoolwork, browsing, and light 1080p esports titles. Great first PC or budget upgrade from an old laptop.</p>
             <p class="price">R12,999</p>
-            <a href="contact.html" class="btn-secondary">Enquire</a>
+            <a href="enquiries.html?product=Starter%20PC" class="btn-secondary">Enquire</a>
           </div>
         </article>
 
@@ -61,37 +67,40 @@
             <h3>Mid-Range Gaming PC</h3>
             <p>A balanced build for 1080p to 1440p gaming at high settings. Good headroom for streaming while you play.</p>
             <p class="price">R16,499</p>
-            <a href="contact.html" class="btn-secondary">Enquire</a>
+            <a href="enquiries.html?product=Mid-Range%20Gaming%20PC" class="btn-secondary">Enquire</a>
           </div>
         </article>
 
         <!-- Gaming PC -->
         <article class="product-card">
           <div class="card-image">
-            <img src="images/download.jpe" alt="Gaming PC">
+            <img src="images/gaming-pc-1440p.jpg" alt="Pre-built 1440p gaming PC for high-frame-rate modern gaming">
           </div>
           <div class="card-body">
             <h3>Gaming PC</h3>
             <p>High frame rates for modern competitive gaming at 1440p. Built for players who want an edge in fast-paced titles.</p>
             <p class="price">R19,999</p>
-            <a href="contact.html" class="btn-secondary">Enquire</a>
+            <a href="enquiries.html?product=Gaming%20PC" class="btn-secondary">Enquire</a>
           </div>
         </article>
 
         <!-- High-End PC -->
         <article class="product-card">
           <div class="card-image">
-            <img src="images/overkill.jpe" alt="High-End PC Workstation">
+            <img src="images/high-end-4k-workstation.jpg" alt="High-end 4K gaming PC workstation for demanding creative and computing workloads">
           </div>
           <div class="card-body">
             <h3>High-End PC</h3>
             <p>Unmatched power for 4K gaming, heavy multitasking, and content creation workloads that chew through lesser rigs.</p>
             <p class="price">R34,999</p>
-            <a href="contact.html" class="btn-secondary">Enquire</a>
+            <a href="enquiries.html?product=High-End%20PC" class="btn-secondary">Enquire</a>
           </div>
         </article>
 
       </div>
+      <p class="search-empty" role="status" aria-live="polite" hidden>
+        No PCs found matching your search
+      </p>
     </section>
 
     <section class="about-summary">
@@ -106,5 +115,27 @@
     <p>&copy; 2026 Build X. All rights reserved.</p>
   </footer>
 
+  <script src="js_assets/product-lightbox.js" defer></script>
+  <script>
+    const pcSearch = document.querySelector("#pc-search");
+    const pcCards = [...document.querySelectorAll(".product-grid .product-card")];
+    const noPcsMessage = document.querySelector(".search-empty");
+
+    // Filter cards by their title, ignoring letter case and extra whitespace.
+    pcSearch.addEventListener("input", () => {
+      const searchTerm = pcSearch.value.trim().toLowerCase();
+      let visibleCards = 0;
+
+      pcCards.forEach((card) => {
+        const title = card.querySelector("h3").textContent.toLowerCase();
+        const matches = title.includes(searchTerm);
+
+        card.hidden = !matches;
+        visibleCards += Number(matches);
+      });
+
+      noPcsMessage.hidden = visibleCards > 0;
+    });
+  </script>
 </body>
 </html>
