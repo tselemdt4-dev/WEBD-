@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://your-netlify-url-here.netlify.app/sitemap.xml
-
+Sitemap: https://fastidious-marzipan-0107a1.netlify.app/sitemap.xml

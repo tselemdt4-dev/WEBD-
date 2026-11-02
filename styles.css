@@ -737,6 +737,10 @@ main {
 
 /* Responsive layouts */
 @media (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
+
   .site-header {
     flex-direction: column;
     gap: 1rem;
@@ -777,6 +781,11 @@ main {
 
   .hero h1 {
     font-size: 2rem;
+  }
+
+  .contact-header h1 {
+    font-size: 1.6rem;
+    word-wrap: break-word;
   }
 
   h2 {
